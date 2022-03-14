@@ -1,0 +1,18 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <button class="btn btn-primary float-left"  (click)="AddEmployee('New', true)">Add New Employee</button>
+    </div>
+    <div class="col-sm-3">
+      <button class="btn btn-primary float-left"  (click)="AddDependent()">Add Dependent</button>
+    </div>
+  </div>
+</div>
+
+<br /><br />
+<ag-grid-angular  style="width: 70%; height: 100%;"
+    class="ag-theme-alpine"
+    [gridOptions]="gridOptions">
+</ag-grid-angular>
+
