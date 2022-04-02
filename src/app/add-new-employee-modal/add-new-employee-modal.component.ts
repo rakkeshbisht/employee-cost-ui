@@ -65,6 +65,7 @@ export class AddNewEmployeeModalComponent implements OnInit {
   }
 
   onCancel(): void {
+    console.log('cancel called');
     this.result = { employee: this.employee , status : false };
     this.activeModal.close(this.result);
   }

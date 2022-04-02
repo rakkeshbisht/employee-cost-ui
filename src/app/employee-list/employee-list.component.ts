@@ -20,11 +20,13 @@ export class EmployeeListComponent implements OnInit {
   title = 'employee-cost-ui';
   rowData = []
   gridOptions : GridOptions;
+  employee: Employee;
 
   constructor(private http: HttpClient,
     public modalService: NgbModal) {
     this.gridOptions = <GridOptions>{};
     this.initGridConfig();
+    this.employee = new Employee();
   }
 
   initGridConfig() {
@@ -94,7 +96,7 @@ export class EmployeeListComponent implements OnInit {
     sortable: true
   };
 
-  AddEmployee(formMode: string, isAddNew: boolean) {
+  AddEmployee(employee: Employee,formMode: string, isAddNew: boolean) {
     const modalRef = this.modalService.open(AddNewEmployeeModalComponent);
     modalRef.componentInstance.employee = new Employee();
     modalRef.componentInstance.formMode = formMode;
@@ -104,6 +106,7 @@ export class EmployeeListComponent implements OnInit {
     .then((result: FormResult) => {
       if (result) {
           console.log("employee added")
+          this.fetchData();
       }
     })
   }
@@ -114,9 +117,5 @@ export class EmployeeListComponent implements OnInit {
 
 
   ngOnInit(): void {
-
-    // fetch('https://localhost:5001/api/Employee/getall')
-    // .then(result => result.json())
-    // .then(rowData => this.rowData = rowData);
   }
 }

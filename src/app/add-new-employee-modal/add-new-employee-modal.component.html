@@ -1,60 +1,62 @@
-<div class="modal-header">
-  <h4 class="modal-title" id="modal-basic-title">Form</h4>
-  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-<div class="modal-body">
-  <div class="container-fluid">
-    <form [formGroup]="entryForm" novalidate>
-      <div class="card">
-        <div class="card-header">
-          <div class="float-left"><h3 class="text-info">Employee</h3></div>
-          <div class="float-right">
-            <h5 class="text-warning font-italic">{{ formMode }}</h5>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="form-group">
-            <label for="id">Employee Id</label>
-            <label class="d-block">
-              <input type="text" class="form-control" formControlName="employeeId" autocomplete="employeeId"
-                [placeholder]="'Employee Id'"/>
-              <span hidden translate>Employee Id</span>
-            </label>
-            <label for="name">Name</label>
-            <label class="d-block">
-              <input type="text" class="form-control" formControlName="name" autocomplete="name"
-                [placeholder]="'Enter Name'" required />
-            </label>
 
-            <label for="role">Role</label>
-            <label class="d-block">
-              <input type="text" class="form-control" formControlName="role" autocomplete="role"
-                [placeholder]="'Enter Role'" required />
-            </label>
+<div class="modal-zindex">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Form</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="container-fluid">
+      <form [formGroup]="entryForm" novalidate>
+        <div class="card">
+          <div class="card-header">
+            <div class="float-left"><h3 class="text-info">Employee</h3></div>
+            <div class="float-right">
+              <h5 class="text-warning font-italic">{{ formMode }}</h5>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="id">Employee Id</label>
+              <label class="d-block">
+                <input type="text" class="form-control" formControlName="employeeId" autocomplete="employeeId"
+                  [placeholder]="'Employee Id'"/>
+                <span hidden translate>Employee Id</span>
+              </label>
+              <label for="name">Name</label>
+              <label class="d-block">
+                <input type="text" class="form-control" formControlName="name" autocomplete="name"
+                  [placeholder]="'Enter Name'" required />
+              </label>
 
-            <label for="salary">Salary</label>
-            <label class="d-block">
-              <input type="text" class="form-control" formControlName="salary" autocomplete="salary"
-                [placeholder]="'Enter Salary'" required />
-            </label>
+              <label for="role">Role</label>
+              <label class="d-block">
+                <input type="text" class="form-control" formControlName="role" autocomplete="role"
+                  [placeholder]="'Enter Role'" required />
+              </label>
+
+              <label for="salary">Salary</label>
+              <label class="d-block">
+                <input type="text" class="form-control" formControlName="salary" autocomplete="salary"
+                  [placeholder]="'Enter Salary'" required />
+              </label>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="float-left">
+              <button  (click)="AddEmployee()" class="btn btn-primary w-20" type="submit">
+                <span translate><i class="fas fa-plus"></i>Add Employee</span>
+              </button>
+            </div>
+            <div class="float-right">
+              <button (click)="onCancel()" class="btn btn-secondary w-20" type="submit">
+                <span translate><i class="fa fa-arrow-left"></i>Cancel</span>
+              </button>
+            </div>
           </div>
         </div>
-        <div class="card-footer">
-          <div class="float-left">
-            <button  (click)="AddEmployee()" class="btn btn-primary w-20" type="submit">
-              <span translate><i class="fas fa-plus"></i>Add Employee</span>
-            </button>
-          </div>
-          <div class="float-right">
-            <button (click)="onCancel()" class="btn btn-secondary w-20" type="submit">
-              <span translate><i class="fa fa-arrow-left"></i>Cancel</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </div>
-

@@ -1,3 +1,5 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+
 html, body {
   height: 100%;
   width: 100%;
@@ -18,3 +20,14 @@ body {
   padding: 1rem;
   overflow: auto;
 }
+
+.modal-backdrop.fade
+{
+   opacity: .1 !important;
+   z-index: 0 !important;
+}
+.modal-open .modal
+{
+  opacity: 1;
+}
+

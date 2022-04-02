@@ -1,8 +1,5 @@
-.modal-body {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
+.modal-zindex
+{
+  z-index: 0;
 }
-.modal-body input {
-  margin-bottom: 10px;
-}
+
